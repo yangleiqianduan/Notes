@@ -1,11 +1,3 @@
----
-createTime : 2017/06/28
-author : linwei0201
-title : git配置及命令介绍
-subtitle: 列出git常用命令及mac bash中便捷配置
----
-
-
 ### 一、设置Shell中Git的颜色和当前所在分支
 
 #### 1. cd ~

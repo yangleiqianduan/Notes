@@ -1,11 +1,3 @@
----
-createTime : 2017/06/28
-author : linwei0201
-title : mac快捷键
-subtitle: mac各种操作快捷键介绍
----
-
-
 > ⌘（command）、⌥（option）、⇧（shift）、⇪（caps lock）、⌃（control）、↩（return）、⌅（enter）
 
 Command+M:最小化窗口
