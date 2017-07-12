@@ -13,13 +13,11 @@ function $parent(ele, tagName){
   return null;
 }
 
-function getTpl(todo){
+function getTodoItemHTML(todo){
   var li = document.createElement("li");
   li.innerHTML = [
-      '<label>',
-        '<input type="checkbox" />',
-        '<span>' + todo + '</span>',
-      '</label>'
+      '<input type="checkbox" />',
+      '<div contenteditable class="todo-item-content">' + todo + '</div>'
   ].join('');
   return li;
 }
@@ -27,47 +25,16 @@ function getTpl(todo){
 window.onload = function(){
   var ul = $("ul");
   var insertBtn = $(".insert-btn");
-  var modifyBtn = $(".modify-btn");
   var deleteBtn = $(".delete-btn");
   var doneBtn = $(".done-btn");
+  var unDoneBtn = $(".undone-btn");
   var input = $("input[type='text']");
-  ul.addEventListener("click", function(e){
-    var checkedInputs = document.querySelectorAll("input[type='checkbox']:checked");
-    var checkedNum = checkedInputs.length;
 
-
-    //选中一个的时候，可以插入和修改
-    if(checkedNum == 1){
-        modifyBtn.disabled = false;
-    } else{
-        modifyBtn.disabled = true;
-    }
-
-  });
 
   //删除
   deleteBtn.addEventListener("click", function(e){
     var checkedInputs = document.querySelectorAll("input[type='checkbox']:checked");
-    checkedInputs.forEach(ele => {
-      var li = $parent(ele, "li");
-      li.parentNode.removeChild(li);
-    })
-  });
-
-  //修改
-  modifyBtn.addEventListener("click", function(e){
-    var text = this.innerText;
-    var checked = $("input[type='checkbox']:checked");
-
-    if(text == "修改"){
-      this.innerText = "保存";
-      input.value = checked.nextElementSibling.innerText;
-    }else{
-      this.innerText = "修改";
-      checked.nextElementSibling.innerText = input.value;
-      input.value = "";
-    }
-
+    checkedInputs.forEach(ele => ele.parentNode.remove())
   });
 
 
@@ -77,7 +44,7 @@ window.onload = function(){
     if(!todo){
       return false;
     }
-    ul.appendChild(getTpl(todo));
+    ul.appendChild(getTodoItemHTML(todo));
     input.value = "";
   });
 
@@ -87,6 +54,16 @@ window.onload = function(){
     var checkedInputs = document.querySelectorAll("input[type='checkbox']:checked");
     checkedInputs.forEach(checkbox => {
       checkbox.parentNode.classList.add("completed");
+      checkbox.nextElementSibling.setAttribute("contenteditable", false);
+    })
+  });
+
+  //open
+  unDoneBtn.addEventListener("click", function(){
+    var checkedInputs = document.querySelectorAll("input[type='checkbox']:checked");
+    checkedInputs.forEach(checkbox => {
+      checkbox.parentNode.classList.remove("completed");
+      checkbox.nextElementSibling.setAttribute("contenteditable", true);
     })
   })
 }

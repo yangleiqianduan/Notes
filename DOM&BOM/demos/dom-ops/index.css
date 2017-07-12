@@ -4,6 +4,11 @@ ul, li{
   list-style: none;
 }
 
-li .completed{
+li.completed,
+li.completed .todo-item-content{
   text-decoration: line-through;
+}
+
+li .todo-item-content{
+  display: inline-block;
 }

@@ -8,15 +8,24 @@
 </head>
 <body>
   <button class="insert-btn">插入</button>
-  <button class="modify-btn" disabled>修改</button>
   <button class="delete-btn">删除</button>
-  <button class="done-btn">完成</button>
+  <button class="done-btn">完成任务</button>
+  <button class="undone-btn">重开任务</button>
   <input type="text" placeholder="请输入Todo" />
   <h2>TODOs:</h2>
   <ul>
-    <li><label><input type="checkbox" /><span>learn js</span></label></li>
-    <li><label><input type="checkbox" /><span>learn BOM</span></label></li>
-    <li><label><input type="checkbox" /><span>learn DOM</span></label></li>
+    <li>
+      <input type="checkbox" />
+      <div class="todo-item-content" contenteditable>learn ECMAScript</div>
+    </li>
+    <li>
+      <input type="checkbox" />
+      <div class="todo-item-content" contenteditable>learn BOM</div>
+    </li>
+    <li>
+      <input type="checkbox" />
+      <div class="todo-item-content" contenteditable>learn DOM</div>
+    </li>
   </ul>
   <script type="text/javascript" src="./index.js"></script>
 </body>
