@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>DOM Loading事件</title>
+
+  <script type="text/javascript">
+    window.onload = function(){
+      var div = document.getElementById("root");
+      console.log("load complete ", new Date().getTime(), div.id);
+    }
+
+    document.addEventListener("DOMContentLoaded", function(){
+      var div = document.getElementById("root");
+      console.log("DOMContentLoaded complete ", new Date().getTime(), div.id);
+    });
+  </script>
+</head>
+<body>
+  <div id="root">
+    <img src="http://www.qiwen8.com/uploads/allimg/150723/103FWT7-8.jpg" width="200" height="200" /><br/>
+    <img src="http://img0.imgtn.bdimg.com/it/u=2022435095,1196902795&fm=26&gp=0.jpg" width="200" height="200" /><br/>
+    <img src="http://img5.imgtn.bdimg.com/it/u=2421320650,3793155191&fm=26&gp=0.jpg" width="200" height="200" /><br/>
+    <img src="http://img0.imgtn.bdimg.com/it/u=754845023,3540679049&fm=26&gp=0.jpg" width="200" height="200" /><br/>
+    <img src="http://img4.imgtn.bdimg.com/it/u=382866679,1973502543&fm=26&gp=0.jpg" width="200" height="200" /><br/>
+    <img src="http://img3.imgtn.bdimg.com/it/u=2272455106,1321691855&fm=26&gp=0.jpg" width="200" height="200" />
+  </div>
+</body>
+</html>
