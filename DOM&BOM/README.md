@@ -159,6 +159,27 @@ DOM的发展大概历经了以下五个阶段：
 ![image](https://github.com/linwei0201/Notes/blob/master/DOM&BOM/img/dom2.png)
 
 
-#### 3.2 DOM事件
+#### 3.2 DOM基础
+
+DOM是Document Object Model的简写，是浏览器提供的一个对象模型，用来操作浏览器的文档树。
+
+- DOM的增删改查
+
+  - 新增DOM节点
+  - 查询DOM节点
+  - 修改DOM节点
+  - 删除DOM节点
+
+#### 3.3 DOM事件
+
+- 事件流
+
+- 事件绑定与解除
+
+- 事件对象
+
+- 事件类型
+
+- 事件代理
 
 
