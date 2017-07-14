@@ -139,9 +139,25 @@ var top = (typeof window.screenTop == "number") ? window.screenTop : window.scre
 ```
 
 
+
 ### DOM
 
-#### 3.1 DOM基础
+#### 3.1 DOM历史
+
+DOM的发展大概历经了以下五个阶段：
+- DOM0（1997.06-1997.10）：网景和IE发布了第四版浏览器，对js做了大量支持，推行DHTML，但二者实现方式大相径庭，js标准开始变得混乱
+
+- DOM1（1998年10月 ）：W3C推行DOM标准，包含DOM Core（DOM核心）和DOM HTML
+
+- DOM2（2000年11月）：DOM视图、DOM事件、DOM样式、DOM遍历和范围（DOM Traversal and Range）
+
+- DOM3（2004年4月 ）：DOM加载和保存模块、DOM验证模块、DOM核心的扩展
+
+- DOM4（2015年11月）：增加Mutation Observers，作为原来 Mutation Events的替代
+
+这是DOM2时代DOM的架构图：
+![image](https://github.com/linwei0201/Notes/blob/master/DOM&BOM/img/dom2.png)
+
 
 #### 3.2 DOM事件
 
