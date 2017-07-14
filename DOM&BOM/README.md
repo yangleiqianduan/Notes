@@ -131,5 +131,18 @@ window对像的location属性引用的是Location对象，它表示当前页面�
 
 ##### 2.6 screen对象
 
+IE、Safari、Opera和Chrome都提供了用来确定和修改window对象位置的属性和方法:screenLeft和screenTop属性，分别用于表示窗口相对于屏幕左边和上边的位置。Firefox则在screenX和screenY属性中提供相同的窗口位置信息,Safari和Chrome也同时支持这两个属性。使用下列代码可以跨浏览器取得窗口左边和上边的位置。
+
+```js
+var left = (typeof window.screenLeft == "number") ? window.screenLeft : window.screenX;
+var top = (typeof window.screenTop == "number") ? window.screenTop : window.screenY;
+```
+
+
+### DOM
+
+#### 3.1 DOM基础
+
+#### 3.2 DOM事件
 
 
