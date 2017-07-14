@@ -118,7 +118,7 @@ window对像的location属性引用的是Location对象，它表示当前页面�
 ![image](https://github.com/linwei0201/Notes/blob/master/DOM&BOM/img/location.png)
 
 | 属性 | 说明 |
-| ------| ------ | ------ |
+| ------| ------ |
 | hash | URL的锚点内容，即："#"（第一个）之后的内容  |
 | host | 主机名（域名）＋端口号  |
 | hostname | 主机名 |
