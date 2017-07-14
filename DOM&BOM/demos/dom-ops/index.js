@@ -2,17 +2,6 @@ function $(selector){
   return document.querySelector(selector);
 }
 
-function $parent(ele, tagName){
-  var parent = ele.parentNode;
-  while(parent && parent!=document.body && parent.tagName.toLowerCase() !== tagName){
-      parent = parent.parentNode;
-  }
-  if(parent.tagName.toLowerCase() == tagName){
-    return parent;
-  }
-  return null;
-}
-
 function getTodoItemHTML(todo){
   var li = document.createElement("li");
   li.innerHTML = [

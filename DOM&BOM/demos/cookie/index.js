@@ -1,10 +1,14 @@
+const CLEAR_COOKIE_CLASS = ".clear-cookie",
+      CLEAR_LOCAL_STORAGE_CLASS = ".clear-local",
+      CLEAR_SESSION_STORAGE_CLASS = ".clear-session";
+
 function $(selector){
   return document.querySelector(selector);
 }
 
-const CLEAR_COOKIE_CLASS = ".clear-cookie",
-      CLEAR_LOCAL_STORAGE_CLASS = ".clear-local",
-      CLEAR_SESSION_STORAGE_CLASS = ".clear-session";
+function setCount(space, num){
+  $(`#${space} .count`).innerHTML = `${space}记录的访问次数：${num}`;
+}
 
 
 class Cookie {
@@ -32,17 +36,13 @@ class Cookie {
     }
 }
 
-function setCount(space, num){
-  $(`#${space} .count`).innerHTML = `${space}记录的访问次数：${num}`;
-}
-
 
 window.onload = function(){
 
   var ck = new Cookie();
   var visit_num = ck.getCookie("visit_num") || 0;
-  setCount("cookie", visit_num);
   ck.setCookie({name: "visit_num", value: ++visit_num});
+  setCount("cookie", visit_num);
 
   var visit_num_local = localStorage.getItem("visit_num") || 0;
   localStorage.setItem("visit_num", ++visit_num_local);

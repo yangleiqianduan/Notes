@@ -5,13 +5,15 @@
 
 BOM浏览器对象模型（Browser Object Model）BOM对象是在Web中使用JavaScript的核心，该对象提供了与浏览器交互相关对象结构。BOM由多个子对象组成，其核心为window对象，它是BOM的顶层对象，表示在浏览器环境中的一个全局的顶级对象，所有在浏览器环境中使用的对象都是window对象的子对象。
 
+>早期是没有BOM标准的，浏览器实现各不相同，直到h5规范中，W3C才把部分BOM的接口比如location和history纳入h5规范中
+
 #### 1. 浏览器对象模型
 
  ![image](https://github.com/linwei0201/Notes/blob/master/DOM&BOM/img/bom.png)
 
-#### 2. dom中的对象
+#### 2. bom中的对象
 
-- ##### window对象
+- ##### window
 
 window对象对象表示一个浏览器窗口或一个frame框架，它处于对象层次的最顶端，提供了处理浏览器窗口的方法和属性。js中的内置对象也是作为window的属性和方法出现的，浏览器环境中全局VO（变量对象）就是window，因此window上的属性和方法的作用域都是全局的。
 
@@ -23,7 +25,7 @@ window对象对象表示一个浏览器窗口或一个frame框架，它处于对
     - scrollBy, scrollTo
     - resizeBy, resizeTo
   - 弹窗类 alert， confirm， prompt
-  ```
+  ```js
     alert("我是一个弹窗"); //浏览器弹出一个弹窗
 
     if(confirm("确认提交不后悔吗")){
@@ -40,7 +42,7 @@ window对象对象表示一个浏览器窗口或一个frame框架，它处于对
     - setTimeout，clearTimeout
     - setInterval，clearInterval
     - requestAnimationFrame
-  ```
+  ```js
     setTimeout(function(){
       //1s后放到消息队列
     }, 1000);
@@ -55,7 +57,7 @@ window对象对象表示一个浏览器窗口或一个frame框架，它处于对
     - ~~escape, unescape： 除了ASCII 字母和数字，和  - _ . ! ~ * ' ( ) 这些标点符号，其他都会被编码~~
     - encodeURI, decodeURI： 除了以上那些和uri上回出现的特殊符号，都会编码
     - encodeURIComponent, decodeURIComponent：所有uri的特殊符号，都会被编码
-  ```
+  ```js
     escape("http://bj.lianjia.com")     //返回http%3A//bj.lianjia.com
     encodeURI("http://bj.lianjia.com")  //返回http://bj.lianjia.com
     encodeURI("http://bj.lianjia.com/xiao qu")  //返回http://bj.lianjia.com/xiao%20qu
@@ -75,7 +77,7 @@ window对象对象表示一个浏览器窗口或一个frame框架，它处于对
 frames对象是一个集合，表示当前页面中使用的子框架。如果页面中使用了框架，将产生一个框架集合frames，在集合中可以用数字下标（从0开始）或名字索引框架。集合中的每一个对象，包含了框架的页面布局信息，以及每一个框架所对应的window对象。
   - frames属性会以集合的方式返回当前窗口中包含的框架。
 
-  ```
+  ```js
   frameList = window.frames;
   ```
   - frameList是一个frame对象的列表。它的类似于数组，有length属性且可以通过[i]的形式访问。
