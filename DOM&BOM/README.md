@@ -165,10 +165,26 @@ DOM是Document Object Model的简写，是浏览器提供的一个对象模型�
 
 - DOM的增删改查
 
+  ![image](https://github.com/linwei0201/Notes/blob/master/DOM&BOM/img/DOM-op.png)
+
   - 新增DOM节点
   - 查询DOM节点
   - 修改DOM节点
   - 删除DOM节点
+
+  ```js
+      var box = document.getElementById("box");
+
+      //创建节点
+      var ele = document.creatElement("div");
+      ele.innerText = "我是新节点的内容";
+      ele = box.appendChild(ele);
+
+      ele.textContent="修改一下节点内容";
+
+      //删除
+      ele.remove();
+  ```
 
 #### 3.3 DOM事件
 
