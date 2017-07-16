@@ -189,6 +189,14 @@ DOM是Document Object Model的简写，是浏览器提供的一个对象模型�
 #### 3.3 DOM事件
 
 - 事件流
+  关于事件流，浏览器有两套不同的实现方案。早期的IE提出的事件模型是冒泡模型，开发人员认为事件是由最确定的节点开始触发，一直传播到文档的根节点为止，如下图所示。
+  ![image](https://github.com/linwei0201/Notes/blob/master/DOM&BOM/img/event1.png)
+
+  Netscape提出了完全相反的事件模型，事件捕获模型，他们认为事件应该都有根节点开始触发，一直传播到最确定的元素为止，如下图所示。
+  ![image](https://github.com/linwei0201/Notes/blob/master/DOM&BOM/img/event2.png)
+
+  DOM2中，规定，DOM事件流有3个阶段：捕获阶段，目标阶段和冒泡阶段，W3C的标准事件模型，如下图所示。
+  ![image](https://github.com/linwei0201/Notes/blob/master/DOM&BOM/img/event3.png)
 
 - 事件绑定与解除
 
