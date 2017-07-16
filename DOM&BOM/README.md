@@ -189,6 +189,7 @@ DOM是Document Object Model的简写，是浏览器提供的一个对象模型�
 #### 3.3 DOM事件
 
 - 事件流
+
   关于事件流，浏览器有两套不同的实现方案。早期的IE提出的事件模型是冒泡模型，开发人员认为事件是由最确定的节点开始触发，一直传播到文档的根节点为止，如下图所示。
   ![image](https://github.com/linwei0201/Notes/blob/master/DOM&BOM/img/event1.png)
 
@@ -203,6 +204,8 @@ DOM是Document Object Model的简写，是浏览器提供的一个对象模型�
 - 事件对象
 
 - 事件类型
+
+![image](https://github.com/linwei0201/Notes/blob/master/DOM&BOM/img/event-type.png)
 
 - 事件代理
 
