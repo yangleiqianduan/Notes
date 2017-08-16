@@ -1,5 +1,7 @@
 ## React生命周期方法总结——使用方式和时机
 
+>原文地址：
+
 ![图1](img/1.png)
 以上就是React组件的生命周期，从出生（pre-mounting）到死亡（unmounting）。
 
@@ -17,7 +19,7 @@ React之美在于把复杂的UI分解为一个个很小的部分。这样我们�
 
 在componentWillMount中，没有任何组件加载，所以你不能做任何与DOM相关的操作。一般来说，我们会在组件的构造函数中初始化组件的默认值。但是，在组件构造函数调用之后，到componentWillMount为止，也不会有任何的状态变化。
 
-[图2][]
+![图2](img/2.png)
 使用构造函数设定默认state
 
 此时你的组件还处于默认状态。几乎所有的事情都应该由其他的组件代码来处理，而不是多余的生命周期方法。
@@ -59,7 +61,7 @@ ComponentDidMount中可以处理所有在组件没挂载时不能处理的事情
 
 也许有些数据是父组件的componentDidMount当中传过来的，并且会进一步往下级组件传播。在我们组件使用新props做任何操作之前，会调用componentWillReceiveProps，第一个参数是nextProps。
 
-[图3]
+![图3](img/3.png)
 
 我们现在不仅可以通过nextProps访问next props，也能通过this.props访问当前props。
 
@@ -70,18 +72,13 @@ ComponentDidMount中可以处理所有在组件没挂载时不能处理的事情
 
 举个例子。假设我们有个canvas元素，要根据this.props.percent在上面画一个漂亮的圆圈.
 
-[图4][]
+![图4](img/4.png)
+
 恩，看上去不错
 
 当我们收到新props时，如果percent改变了，我们想要重绘这个图。代码如下：
 
-```js
-componentWillReceiveProps(nextProps){
-  if(this.props.percent !== nextProps.percent){
-    this.setUpCircle(nextProps.percent);
-  }
-}
-```
+![图5](img/5.png)
 
 还有个提示：componentWillReceiveProps在初始render的时候，不会被调用。因为那时组件正在接受props，没有old props来做对比，所以，这次不算数。
 
@@ -93,13 +90,7 @@ componentWillReceiveProps(nextProps){
 现在我们有了新的props。典型的React主义者认为，当组件收到新的props或者state的时候，就应该更新。
 
 但是我们的组件有点不安，将会先询问是否允许。这就是我们要了解的————shouldComponentUpdate方法，带有两个参数：nextProps和nextState。
-
-```js
-shouldComponentUpdate(nextProps, nextState){
-  return this.props.engagement !== nextProps.engagement
-  || nextState.input !== this.state.input
-}
-```
+![图6](img/6.png)
 
 shouldComponentUpdate应该始终返回布尔值——作为对“should I render？”的回答。是的，小组件，你应该更新。此函数的默认返回值是true。
 
@@ -137,11 +128,8 @@ shouldComponentUpdate应该始终返回布尔值——作为对“should I rende
 
 那并不表示componentDidUpdate就没有用了。回到我们masonry布局的例子中，我们想要在DOM更新的时候，重新排版grid，这时候就可以用到componentDidUpdate。
 
-```js
-componentDidUpdate(){
-  this.createGrid();
-}
-```
+![图7](img/7.png)
+
 ### componentWillUnmount
 你的组件将要消失。可能永远消失。
 
@@ -151,11 +139,8 @@ componentDidUpdate(){
 
 基本上，clean up anything to do that solely involves the component in question- when it's gone, it should be completely gone.
 
-```js
-componentWillUnmount(){
-  window.removeEventListener('resize', this.resizeListener);
-}
-```
+![图8](img/8.png)
+
 
 **最常用场景：**清除组件中的任何遗留垃圾。
 **是否可以调用setState：**不可以。
