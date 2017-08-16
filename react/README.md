@@ -1,6 +1,6 @@
 ## React生命周期方法总结——使用方式和时机
 
-[图1][./img/1.png]
+![图1](img/1.png)
 以上就是React组件的生命周期，从出生（pre-mounting）到死亡（unmounting）。
 
 React之美在于把复杂的UI分解为一个个很小的部分。这样我们不仅可以划分我们的app，还可以自定义每个部分。
@@ -77,9 +77,9 @@ ComponentDidMount中可以处理所有在组件没挂载时不能处理的事情
 
 ```js
 componentWillReceiveProps(nextProps){
-	if(this.props.percent !== nextProps.percent){
-		this.setUpCircle(nextProps.percent);
-	}
+  if(this.props.percent !== nextProps.percent){
+    this.setUpCircle(nextProps.percent);
+  }
 }
 ```
 
@@ -96,8 +96,8 @@ componentWillReceiveProps(nextProps){
 
 ```js
 shouldComponentUpdate(nextProps, nextState){
-	return this.props.engagement !== nextProps.engagement
-	|| nextState.input !== this.state.input
+  return this.props.engagement !== nextProps.engagement
+  || nextState.input !== this.state.input
 }
 ```
 
@@ -139,7 +139,7 @@ shouldComponentUpdate应该始终返回布尔值——作为对“should I rende
 
 ```js
 componentDidUpdate(){
-	this.createGrid();
+  this.createGrid();
 }
 ```
 ### componentWillUnmount
@@ -153,7 +153,7 @@ componentDidUpdate(){
 
 ```js
 componentWillUnmount(){
-	window.removeEventListener('resize', this.resizeListener);
+  window.removeEventListener('resize', this.resizeListener);
 }
 ```
 
