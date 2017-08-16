@@ -1,6 +1,6 @@
 ## React生命周期方法总结——使用方式和时机
 
->原文地址：
+>原文地址：https://engineering.musefind.com/react-lifecycle-methods-how-and-when-to-use-them-2111a1b692b1
 
 ![图1](img/1.png)
 以上就是React组件的生命周期，从出生（pre-mounting）到死亡（unmounting）。
